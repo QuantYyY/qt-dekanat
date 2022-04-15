@@ -20,7 +20,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    b = ui->doubleSpinBox->value();
+    //b = ui->doubleSpinBox->value();
     hr = ui->doubleSpinBox_2->value();
     y = ui->doubleSpinBox_3->value();
     v = ui->doubleSpinBox_4->value();

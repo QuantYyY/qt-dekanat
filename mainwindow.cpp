@@ -64,7 +64,7 @@ void MainWindow::on_pushButton_clicked()
     }
 
     bool check_1 = false;
-    QFile data("D:/logdata.csv");
+    QFile data("E:/logdata.csv");
     QTextStream file(&data);
     if (data.open(QFile::WriteOnly | QFile::Truncate |QIODevice::Append)) {
         check_1 = true;
@@ -89,6 +89,41 @@ void MainWindow::on_pushButton_clicked()
     //std::cout << "Угол подъема винта шнека = " << alfash << std::endl;
     file << "Угол подъема винта шнека = " << ";"<< QString::number(alfash) <<";"<< "\n";
 
+    double ddsh;
+    ddsh = 0.4 * sqrt(di);
+    //std::cout << "Диаметр ступицы шнека = " << ddsh << std::endl;
+    file << "Диаметр ступицы шнека = " << ddsh << ";" << "\n";
+
+    double ci;
+    ci = 0.1 * di;
+    //std::cout << "Толщина винта шнека = " << ci << std::endl;
+    file << "Толщина винта шнека = " << ci <<";"<< "\n";
+
+    fp = (pi * (pow(dsh, 2) - pow(ddsh, 2)) * (s - (ci * nz / cos(alfash)))) / (4 * s);
+    //std::cout << "Приведенная площадь потока угля = " << fp << std::endl;
+
+    fo = 0.6 * fp;
+    fim = 0.44 * sqrt(di) * (0.9 * fo / fp + 0.1);
+    //std::cout << "коэффициент использования сечения шнека = " << fim << std::endl;
+    file << "Коэффициент использования сечения шнека = " << ";" << "\n";
+
+
+
+
+    //std::cout << "Укажите высоту погрузки\n";
+
+
+    //std::cin >> hp;
+
+    hp = ui->doubleSpinBox_18->value();
+    //std::cout << "критическая частота вращения для шнекового исполнительного органа = " << nok << std::endl;
+    file << "Критическая частота вращения для шнекового исполнительного органа = " << ";" << "\n";
+
+    //std::cout << "Количество резцов в забойной линии резания = " << nz << std::endl;
+
+
+
+
     QMessageBox msgBox;
     msgBox.setWindowTitle("Рассчет условия");
     msgBox.setText("Условие выполнено!");
@@ -96,9 +131,16 @@ void MainWindow::on_pushButton_clicked()
     msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
     msgBox.setDefaultButton(QMessageBox::Ok);
 
-    d1.set(&tk2, nlk, maxsumtk, topt, sumtk, tz1, tk1, maxnlk, dsh, alfash);
+    d1.set(&tk2, nlk, maxsumtk, topt, sumtk,
+           tz1, tk1, maxnlk, dsh, alfash, ddsh,
+           ci, fp, fo, nu, hp, nok, kk1, v, no,
+           di, lyamda, hr, ho, s, fim, b, nz, nlz, motion, &tz, scp);
     d1.set(hmax, hcp, topt);
     d1.show();
+
+
+
+
 
     while(d1.exec() == QDialog::Accepted){}
 
@@ -207,4 +249,6 @@ void MainWindow::d2_func(){
     tz1 = d2.tz1;
     tzz = d2.tzz;
 }
+
+
 

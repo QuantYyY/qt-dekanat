@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>626</width>
-    <height>558</height>
+    <width>644</width>
+    <height>801</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -23,7 +23,7 @@
    <property name="geometry">
     <rect>
      <x>270</x>
-     <y>500</y>
+     <y>750</y>
      <width>83</width>
      <height>29</height>
     </rect>
@@ -36,8 +36,8 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>0</y>
-     <width>445</width>
+     <y>-10</y>
+     <width>350</width>
      <height>431</height>
     </rect>
    </property>
@@ -101,13 +101,78 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>470</y>
+     <y>460</y>
      <width>391</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
     <string>Угол подъема винта шнека = </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>480</y>
+     <width>391</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Диаметр ступицы шнека =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>500</y>
+     <width>391</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Толщина винта шнека =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>520</y>
+     <width>391</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Приведенная площадь потока угля =</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>540</y>
+     <width>391</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Коэффициент использования сечения шнека =</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>600</y>
+     <width>171</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Расчет кутковой длины</string>
    </property>
   </widget>
  </widget>

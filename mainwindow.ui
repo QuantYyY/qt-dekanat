@@ -68,19 +68,6 @@ font-size: 24px;
      <string>Расчитать</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_8">
-    <property name="geometry">
-     <rect>
-      <x>320</x>
-      <y>40</y>
-      <width>606</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_19">
     <property name="geometry">
      <rect>
@@ -107,7 +94,7 @@ font-size: 24px;
    <widget class="QSplitter" name="splitter_13">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>50</y>
       <width>630</width>
       <height>338</height>
@@ -123,7 +110,7 @@ font-size: 24px;
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>218</height>
+       <height>184</height>
       </size>
      </property>
      <property name="orientation">
@@ -311,7 +298,7 @@ font-size: 24px;
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>186</height>
+       <height>157</height>
       </size>
      </property>
      <property name="orientation">
@@ -475,7 +462,7 @@ font-size: 24px;
     <property name="maximumSize">
      <size>
       <width>16777215</width>
-      <height>46</height>
+      <height>45</height>
      </size>
     </property>
     <property name="orientation">
@@ -544,7 +531,7 @@ font-size: 24px;
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <layout class="QFormLayout" name="formLayout">
        <item row="0" column="0">
         <widget class="QLabel" name="label_17">
@@ -579,6 +566,41 @@ font-size: 24px;
      </widget>
     </widget>
    </widget>
+   <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>230</y>
+      <width>126</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>126</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>126</width>
+      <height>16777215</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>230</y>
+      <width>151</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Высота погрузки = </string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -586,7 +608,7 @@ font-size: 24px;
      <x>0</x>
      <y>0</y>
      <width>1333</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

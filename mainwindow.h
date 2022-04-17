@@ -7,6 +7,7 @@
 #include "dialog_2.h"
 #include "dialog_3.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -18,6 +19,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 private slots:
     void on_pushButton_clicked();
@@ -59,6 +61,7 @@ private:
     float maxnlk = 0;
     int nlk = 2;
     Dialog_1 d1;
+    Dialog_4 d4;
     Dialog_2 d2;
     double lxb;
     double sum = 0;
@@ -76,5 +79,10 @@ private:
         double fim;
         double dsh;
         QString motion;
+        double fo;
+        double nu;
+        double hp;
+        double nok;
+        double kk1;
 };
 #endif // MAINWINDOW_H

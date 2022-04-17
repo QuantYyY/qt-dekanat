@@ -20,7 +20,11 @@ void Dialog_1::set(double d1, double d2, double d3)
     ui->label_4->setText("Средняя оптимальная ширина стружки для забойных резцов = "+ QString::number(d3));
 }
 
-void Dialog_1::set(std::vector<double>* tk2, int nlk, double maxsumtk, double topt, double sumtk, double tz1, double tk1, float maxnlk, double dsh, double alfash)
+void Dialog_1::set(std::vector<double>* tk2, int nlk, float maxsumtk, float topt, float sumtk,
+                   double tz1, float tk1, float maxnlk, double dsh, double alfash, double ddsh,
+                   double ci, double fp, double fo, double nu, double hp, double nok, double kk1,
+                   double v, double no, double di, double lyamda, double hr, double ho, double s,
+                   double fim, double b, double nz, double nlz, QString motion, std::vector<double>* tz, double scp)
 {
     do{
            for (int ilk = 1; ilk <= nlk && nlk != 0; ilk++)
@@ -47,17 +51,38 @@ void Dialog_1::set(std::vector<double>* tk2, int nlk, double maxsumtk, double to
            }
          }while(true);
 
+
+
+
+
     ui->label->setText(ui->label->text() + "Длина кутковой части исполнительного органа = " + QString::number(maxsumtk) + " см,\nпри числе линий резания: " +
                        QString::number(maxnlk));
 
     ui->label_5->setText("Диаметр шнека = " + QString::number(dsh));
     ui->label_6->setText("Угол подъема винта шнека = " + QString::number(alfash));
+    ui->label_7->setText("Диаметр ступицы шнека =" + QString::number(ddsh));
+    ui->label_8->setText("Толщина винта шнека =" + QString::number(ci));
+    ui->label_9->setText("Приведенная площадь потока угля =" + QString::number(fp));
+    ui->label_10->setText("Коэффициент использования сечения шнека =" + QString::number(fo));
 
+
+    d4.set(tk2, nlk, maxsumtk, topt, sumtk,
+           tz1, tk1, maxnlk, dsh, alfash, ddsh,
+           ci, fp, fo, nu, hp, nok, kk1,
+           v, no, di, lyamda, hr, ho, s,
+           fim, b, nz, nlz, motion, tz, scp);
 }
 
 void Dialog_1::on_pushButton_clicked()
 {
     ui->textBrowser->setText("");
     this->close();
+}
+
+
+
+void Dialog_1::on_pushButton_2_clicked()
+{
+    d4.show();
 }
 

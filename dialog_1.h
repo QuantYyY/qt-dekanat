@@ -17,7 +17,8 @@ public:
 
     void set(double d1, double d2, double d3);
 
-    void set(std::vector<double>* tk2, int nlk, double maxsumtk, double topt, double sumtk, double tz1, double tk1,  float maxnlk);
+    void set(std::vector<double>* tk2, int nlk, double maxsumtk, double topt, double sumtk, double tz1, double tk1,  float maxnlk, double dsh, double alfash);
+
 private slots:
     void on_pushButton_clicked();
 

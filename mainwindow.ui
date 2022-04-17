@@ -68,473 +68,514 @@ font-size: 24px;
      <string>Расчитать</string>
     </property>
    </widget>
-   <widget class="QSplitter" name="splitter_22">
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>40</y>
+      <width>606</width>
+      <height>261</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>110</y>
+      <width>471</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Укажите какой ход винта (per - переменный, post - постоянный)</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>110</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSplitter" name="splitter_13">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>60</y>
-      <width>1286</width>
-      <height>377</height>
+      <y>50</y>
+      <width>630</width>
+      <height>338</height>
      </rect>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
-    <widget class="QSplitter" name="splitter_13">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <widget class="QSplitter" name="splitter_8">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>233</height>
-       </size>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <widget class="QSplitter" name="splitter">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Введите ширину захвата в метрах</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="minimum">
-         <double>-9999999999999999635896294965248.000000000000000</double>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_2">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Введите расчетную мощность разрушаемого пласта в метрах</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="minimum">
-         <double>-9999999999999999635896294965248.000000000000000</double>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_3">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Введите плотность угля в массиве в т/м3</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="minimum">
-         <double>-9999999999999999635896294965248.000000000000000</double>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_5">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_5">
-        <property name="text">
-         <string>Введите скорость подачи</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_4">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_4">
-        <property name="text">
-         <string>Укажите диаметр исполнительного органа (для переменного хода не более 1м)</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_6">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_6">
-        <property name="text">
-         <string>Укажите частоту вращения</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_7">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Укажите число заходов шнека</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-     <widget class="QSplitter" name="splitter_9">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>199</height>
-       </size>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <widget class="QSplitter" name="splitter_10">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Введите конструктивный вылет забойного резца в сантиметрах</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_11">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>Введите угол установки забойного резца к поверхности резания в градусах</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_12">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_11">
-        <property name="text">
-         <string>Введите коэффициент вылета резца</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_14">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_13">
-        <property name="text">
-         <string>Средняя толщина стружки</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_15">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_14">
-        <property name="text">
-         <string>Введите конструктивную ширину режущей части забойного резца в сантиметрах</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-      <widget class="QSplitter" name="splitter_16">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <widget class="QLabel" name="label_15">
-        <property name="text">
-         <string>Введите показатель степени хрупкости</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
-      </widget>
-     </widget>
-    </widget>
-    <widget class="QSplitter" name="splitter_21">
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_8">
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>113</height>
+       <height>218</height>
       </size>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
      </property>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QSplitter" name="splitter_17">
+     <widget class="QSplitter" name="splitter">
       <property name="orientation">
-       <enum>Qt::Vertical</enum>
+       <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QSplitter" name="splitter_18">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Введите ширину захвата в метрах</string>
        </property>
-       <widget class="QLabel" name="label_16">
-        <property name="text">
-         <string>Введите крайний кутковый шаг резания (не более 0,45 tопт)</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-       </widget>
       </widget>
-      <widget class="QSplitter" name="splitter_19">
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
        </property>
-       <widget class="QLabel" name="label_17">
-        <property name="text">
-         <string>Введите первый шаг резания в забойной части (не более 0,85 tопт)</string>
-        </property>
-       </widget>
-       <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
-        <property name="minimumSize">
-         <size>
-          <width>126</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>126</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="minimum">
-         <double>-1000000000000000044885712678075916785549312.000000000000000</double>
-        </property>
-        <property name="maximum">
-         <double>10000000000000000303786028427003666890752.000000000000000</double>
-        </property>
-       </widget>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="minimum">
+        <double>-9999999999999999635896294965248.000000000000000</double>
+       </property>
       </widget>
      </widget>
-     <widget class="QSplitter" name="splitter_20">
-      <property name="maximumSize">
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Введите расчетную мощность разрушаемого пласта в метрах</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="minimum">
+        <double>-9999999999999999635896294965248.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>Введите плотность угля в массиве в т/м3</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="minimum">
+        <double>-9999999999999999635896294965248.000000000000000</double>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Введите скорость подачи</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Укажите диаметр исполнительного органа (для переменного хода не более 1м)</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>Укажите частоту вращения</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_7">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Укажите число заходов шнека</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_9">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>186</height>
+      </size>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QSplitter" name="splitter_10">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Введите конструктивный вылет забойного резца в сантиметрах</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_11">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Введите угол установки забойного резца к поверхности резания в градусах</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_12">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Введите коэффициент вылета резца</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_14">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Средняя толщина стружки</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_15">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Введите конструктивную ширину режущей части забойного резца в сантиметрах</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QSplitter" name="splitter_16">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>Введите показатель степени хрупкости</string>
+       </property>
+      </widget>
+      <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+       <property name="minimumSize">
+        <size>
+         <width>126</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>126</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_20">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>130</y>
+      <width>78</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>46</height>
+     </size>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QLabel" name="label_12">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0,45 tопт = </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>20</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>0,85 tопт = </string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QSplitter" name="splitter_17">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>50</y>
+      <width>606</width>
+      <height>58</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+    <widget class="QSplitter" name="splitter_18">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="label_16">
+      <property name="text">
+       <string>Введите крайний кутковый шаг резания (не более 0,45 tопт)</string>
+      </property>
+     </widget>
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+      <property name="minimumSize">
        <size>
-        <width>16777215</width>
-        <height>45</height>
+        <width>126</width>
+        <height>0</height>
        </size>
       </property>
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
+      <property name="maximumSize">
+       <size>
+        <width>126</width>
+        <height>16777215</height>
+       </size>
       </property>
-      <widget class="QLabel" name="label_12">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>0,45 tопт = </string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_18">
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="text">
-        <string>0,85 tопт = </string>
-       </property>
-      </widget>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_19">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QWidget" name="">
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>Введите первый шаг резания в забойной части (не более 0,85 tопт)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+         <property name="minimumSize">
+          <size>
+           <width>126</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>126</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <double>-1000000000000000044885712678075916785549312.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>10000000000000000303786028427003666890752.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </widget>
    </widget>
@@ -545,7 +586,7 @@ font-size: 24px;
      <x>0</x>
      <y>0</y>
      <width>1333</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

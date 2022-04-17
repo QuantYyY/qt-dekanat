@@ -20,7 +20,7 @@ void Dialog_1::set(double d1, double d2, double d3)
     ui->label_4->setText("Средняя оптимальная ширина стружки для забойных резцов = "+ QString::number(d3));
 }
 
-void Dialog_1::set(std::vector<double>* tk2, int nlk, double maxsumtk, double topt, double sumtk, double tz1, double tk1, float maxnlk)
+void Dialog_1::set(std::vector<double>* tk2, int nlk, double maxsumtk, double topt, double sumtk, double tz1, double tk1, float maxnlk, double dsh, double alfash)
 {
     do{
            for (int ilk = 1; ilk <= nlk && nlk != 0; ilk++)
@@ -49,6 +49,9 @@ void Dialog_1::set(std::vector<double>* tk2, int nlk, double maxsumtk, double to
 
     ui->label->setText(ui->label->text() + "Длина кутковой части исполнительного органа = " + QString::number(maxsumtk) + " см,\nпри числе линий резания: " +
                        QString::number(maxnlk));
+
+    ui->label_5->setText("Диаметр шнека = " + QString::number(dsh));
+    ui->label_6->setText("Угол подъема винта шнека = " + QString::number(alfash));
 
 }
 

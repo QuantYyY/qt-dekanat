@@ -25,6 +25,12 @@ set(PROJECT_SOURCES
     dialog_1.h
     dialog_1.cpp
     dialog_1.ui
+    dialog_2.h
+    dialog_2.cpp
+    dialog_2.ui
+    dialog_3.h
+    dialog_3.cpp
+    dialog_3.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

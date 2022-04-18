@@ -1,11 +1,35 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <math.h>
-#include <QErrorMessage>
-#include <QDialog>
-#include <QMessageBox>
-#include <QFile>
-#include <QStringList>
+
+void saveDataInFile(QString& str)
+{
+    QFile file("file.csv");
+    if(file.open(QFile::WriteOnly | QFile::Text | QFile::Append))
+    {
+        QTextStream stream(&file);
+        stream << str;
+        file.close();
+    }
+}
+
+double findDouble(QString& findStr)
+{
+    QString str = "";
+    QFile file("file.csv");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QString string = file.readAll();
+        for(int i = string.indexOf(findStr); string[i] != '\n'; i++)
+        {
+            if(string[i] >= '0' && string[i] <= '9')
+                str += string[i];
+            else if(string[i] == ',')
+                str += '.';
+        }
+        file.close();
+    }
+    return str.toDouble();
+}
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -20,235 +44,32 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_pushButton_clicked()
 {
-    b = ui->doubleSpinBox->value();
-    hr = ui->doubleSpinBox_2->value();
-    y = ui->doubleSpinBox_3->value();
-    v = ui->doubleSpinBox_4->value();
-    di = ui->doubleSpinBox_5->value();
-    no = ui->doubleSpinBox_6->value();
-    nz = ui->doubleSpinBox_7->value();
-    lkk = ui->doubleSpinBox_9->value();
-    sigma = ui->doubleSpinBox_10->value() * pi / 180;
-    kl = ui->doubleSpinBox_11->value();
-
-    lpp = lkk * sin(sigma);
-    hmax = lpp / kl;
-
-    hcp = 2.0*hmax / pi;
-
-    bk = ui->doubleSpinBox_14->value();
-    e = ui->doubleSpinBox_15->value();
-
-    topt = ((5.0*hcp)/(0.5*hcp+4.5)+0.7*hcp)*((1.47*e)/(e+1.2))+bk;
-
-    tk1 = ui->doubleSpinBox_16->value();
-    tz1 = ui->doubleSpinBox_17->value();
-
-    if(tk1 > 0.45*topt)
+    QFile file("file.csv");
+    if(file.open(QFile::WriteOnly | QFile::Text))
     {
-        ui->label_1->setText("Введён не корректный крайний кутковый шаг резания");
+        file.resize(0);
+        file.close();
+    }
+
+    QString strSave = "Ширина захвата; " + ui->doubleSpinBox->text() + '\n';
+    strSave += "Мощность пласта; " + ui->doubleSpinBox_2->text() + '\n';
+    strSave += "Плотность угля; " + ui->doubleSpinBox_3->text() + '\n';
+    strSave += "Скорость подачи; " + ui->doubleSpinBox_4->text() + '\n';
+    strSave += "Диаметр исполнительного органа; " + ui->doubleSpinBox_5->text() + '\n';
+    strSave += "Частота вращения; " + ui->doubleSpinBox_6->text() + '\n';
+    strSave += "Число заходов шнека; " + ui->doubleSpinBox_7->text() + '\n';
+
+    if(strSave.indexOf(" 0,00000\n") > 0)
+    {
+        QMessageBox::warning(this, "Error", "Некорректные данные");
         return;
-    }else{
-        ui->label_1->setText("");
     }
 
-    if(tz1 > 0.85*topt)
-    {
-        ui->label_1->setText("Введён не корректный первый шаг резания в забойной части");
-        return;
-    }else{
-        ui->label_1->setText("");
-    }
+    saveDataInFile(strSave);
 
-    bool check_1 = false;
-    QFile data("E:/logdata.csv");
-    QTextStream file(&data);
-    if (data.open(QFile::WriteOnly | QFile::Truncate |QIODevice::Append)) {
-        check_1 = true;
-    }
-
-    motion = ui->textEdit->toPlainText();
-    scp = pow(di,(2/3));
-    if (motion == "post")
-    {
-      s = scp;
-    }
-    else if (motion == "per")
-    {
-      s = 1.2 * scp;
-    }
-    dsh = di - 0.02 * lpp;
-    //std::cout << "Диаметр шнека = " << dsh << std::endl;
-    file << "Диаметр шнека = " << ";"<<QString::number(dsh) <<";"<< "\n";
-
-    double alfash;
-    alfash = atan(s/(pi*dsh));
-    //std::cout << "Угол подъема винта шнека = " << alfash << std::endl;
-    file << "Угол подъема винта шнека = " << ";"<< QString::number(alfash) <<";"<< "\n";
-
-    double ddsh;
-    ddsh = 0.4 * sqrt(di);
-    //std::cout << "Диаметр ступицы шнека = " << ddsh << std::endl;
-    file << "Диаметр ступицы шнека = " << ddsh << ";" << "\n";
-
-    double ci;
-    ci = 0.1 * di;
-    //std::cout << "Толщина винта шнека = " << ci << std::endl;
-    file << "Толщина винта шнека = " << ci <<";"<< "\n";
-
-    fp = (pi * (pow(dsh, 2) - pow(ddsh, 2)) * (s - (ci * nz / cos(alfash)))) / (4 * s);
-    //std::cout << "Приведенная площадь потока угля = " << fp << std::endl;
-
-    fo = 0.6 * fp;
-    fim = 0.44 * sqrt(di) * (0.9 * fo / fp + 0.1);
-    //std::cout << "коэффициент использования сечения шнека = " << fim << std::endl;
-    file << "Коэффициент использования сечения шнека = " << ";" << "\n";
-
-
-
-
-    //std::cout << "Укажите высоту погрузки\n";
-
-
-    //std::cin >> hp;
-
-    hp = ui->doubleSpinBox_18->value();
-    //std::cout << "критическая частота вращения для шнекового исполнительного органа = " << nok << std::endl;
-    file << "Критическая частота вращения для шнекового исполнительного органа = " << ";" << "\n";
-
-    //std::cout << "Количество резцов в забойной линии резания = " << nz << std::endl;
-
-
-
-
-    QMessageBox msgBox;
-    msgBox.setWindowTitle("Рассчет условия");
-    msgBox.setText("Условие выполнено!");
-    msgBox.setIcon(QMessageBox::Information);
-    msgBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-    msgBox.setDefaultButton(QMessageBox::Ok);
-
-    d1.set(&tk2, nlk, maxsumtk, topt, sumtk,
-           tz1, tk1, maxnlk, dsh, alfash, ddsh,
-           ci, fp, fo, nu, hp, nok, kk1, v, no,
-           di, lyamda, hr, ho, s, fim, b, nz, nlz, motion, &tz, scp);
-    d1.set(hmax, hcp, topt);
-    d1.show();
-
-
-
-
-
-    while(d1.exec() == QDialog::Accepted){}
-
-    std::vector<int> check;
-
-
-    bool right = true;
-      if ((100*b <= (bzz+bzk)) && (100*b+1.5 >=(bzz+bzk)))
-      {
-        msgBox.show();
-        msgBox.exec();
-      }
-      else {
-        sumtz = 0;
-        while (true)
-        {
-          if ((100*b <= (bzz+bzk)) && (100*b+1.5 >=(bzz+bzk)))
-          {
-            msgBox.setWindowTitle("Рассчет условия");
-            msgBox.setText("Условие выполнено!");
-            msgBox.setIcon(QMessageBox::Information);
-            msgBox.show();
-            msgBox.exec();
-            break;
-          }
-          else{
-            tz.clear();
-            double tzi;
-            msgBox.setText("Условие не выполнено\nНажмите OK и выполните перерасчет, уменьшите(увеличьте) значение крайнего шага резания или первого шага резания\n");
-            msgBox.setIcon(QMessageBox::Warning);
-            msgBox.show();
-            int res = msgBox.exec();
-            if (res == QMessageBox::Ok){
-                this->d2_func();
-                tz.push_back(tz1);
-                tz.push_back(tzz);
-                for (int ilz = 2; ilz < nlz; ilz++)
-                {
-                   check.push_back(ilz);
-                   tzi = round((((tz1 - tk1)*(ilz - 1))/(nlz -1) + tz1)*10)/10;
-                   tz.push_back(tzi);
-                   sumtz += tzi;
-                   //std::cout << "Длина линии резания  " << ilz << " равна " << tzi << " см" << std::endl;
-                   file << "Шаг резания забойной части = " << ";"<< QString::number(tzi) << ";"<< " для линии резания " <<";"<< QString::number(ilz) <<";"<< "\n";
-                   maxsumtz = sumtz;
-                }
-
-                sumtz = 0;
-                bzz = maxsumtz + (round(tzz*10)/10)+tz1;
-                file << "Первый шаг резания = " <<";"<< QString::number(tz1) <<";"<< "\n";
-                file << "Краний шаг резания = " <<";"<< QString::number(tzz) <<";"<< "\n";
-                file << "Длина забойной части исполнительного органа = " <<";"<< QString::number(bzz) <<";"<< "\n";
-            } else {
-                data.close();
-                return;
-            }
-            double q1 = 100.0 * b - bzk;
-            double q2 = 100.0*b + topt - bzk;
-            double q3 = 100*b;
-            double q4 = 100*b+1.5;
-            double q5 = bzz+bzk;
-            d3.set(tz, check, q1,q2,q3,q4,q5,bzz);
-            check.clear();
-            d3.show();
-            while (d3.exec() == QDialog::Accepted){}
-          //std::cout << "Необходимое условие для длины забойной части : " << 100.0 * b - bzk << " <= "<< bzz << " <= " << 100.0*b + topt - bzk << std::endl;
-          //std::cout << "Проверяется условие на отклонение от ширины захвата : " << 100*b << " <= " << bzz+bzk << " <= " << 100*b+1.5 << std::endl;
-          }
-       }
-    }
-    data.close();
+    window.show();
+    this->close();
 }
-
-
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    b = ui->doubleSpinBox->value();
-    hr = ui->doubleSpinBox_2->value();
-    y = ui->doubleSpinBox_3->value();
-    v = ui->doubleSpinBox_4->value();
-    di = ui->doubleSpinBox_5->value();
-    no = ui->doubleSpinBox_6->value();
-    nz = ui->doubleSpinBox_7->value();
-    lkk = ui->doubleSpinBox_9->value();
-    sigma = ui->doubleSpinBox_10->value() * pi / 180;
-    kl = ui->doubleSpinBox_11->value();
-
-    lpp = lkk * sin(sigma);
-    hmax = lpp / kl;
-
-    hcp = 2.0*hmax / pi;
-
-    bk = ui->doubleSpinBox_14->value();
-    e = ui->doubleSpinBox_15->value();
-
-    topt = ((5.0*hcp)/(0.5*hcp+4.5)+0.7*hcp)*((1.47*e)/(e+1.2))+bk;
-
-    ui->label_12->setText("0,45 tопт = " + QString::number(0.45*topt));
-    ui->label_18->setText("0,85 tопт = " + QString::number(0.85*topt));
-}
-
-void MainWindow::d2_func(){
-    d2.show();
-    while (d2.exec() == QDialog::Accepted){}
-    tz1 = d2.tz1;
-    tzz = d2.tzz;
-}
-
-
 

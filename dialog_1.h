@@ -2,8 +2,9 @@
 #define DIALOG_1_H
 
 #include <QDialog>
-#include "dialog_4.h"
-
+#include <QMessageBox>
+#include "dialog_2.h"
+#include "corner.h"
 
 namespace Ui {
 class Dialog_1;
@@ -17,22 +18,42 @@ public:
     explicit Dialog_1(QWidget *parent = nullptr);
     ~Dialog_1();
 
-    void set(double d1, double d2, double d3);
-
-    void set(std::vector<double>* tk2, int nlk, float maxsumtk, float topt, float sumtk,
-             double tz1, float tk1, float maxnlk, double dsh, double alfash, double ddsh,
-             double ci, double fp, double fo, double nu, double hp, double nok, double kk1,
-             double v, double no, double di, double lyamda, double hr, double ho, double s,
-             double fim, double b, double nz, double nlz, QString motion, std::vector<double>* tz, double scp);
-
+    void set(double, double, double);
 
 private slots:
     void on_pushButton_clicked();
+
+    void changeValueOfClass();
+
+    void on_pushButton_3_clicked();
+
     void on_pushButton_2_clicked();
+
+    QString getStringForSave();
+
+    void calculateSumtk();
+
+    QString getStringSumtk();
 
 private:
     Ui::Dialog_1 *ui;
-        Dialog_4 d4;
+    Dialog_2 dialogWindow;
+    Corner windowForCroner;
+    double hcp;
+    double bk;
+    double e;
+    double tz1;
+    double tk1;
+    double topt;
+    double bzk;
+    float sumtk = 0;
+    float maxsumtk = 0;
+    std::vector <double> tk2;
+    int answer;
+    float maxnlk = 0;
+    int nlk = 2;
+    double lkk;
+    double sigma;
 };
 
 #endif // DIALOG_1_H

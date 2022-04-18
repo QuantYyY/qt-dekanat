@@ -15,16 +15,15 @@ public:
     explicit Dialog_2(QWidget *parent = nullptr);
     ~Dialog_2();
 
+    void setSumtk(double);
+
+    void setMaxSumtk(double, double);
+
 private slots:
     void on_pushButton_clicked();
 
-public:
-    double tz1;
-    double tzz;
-
 private:
     Ui::Dialog_2 *ui;
-
 };
 
 #endif // DIALOG_2_H

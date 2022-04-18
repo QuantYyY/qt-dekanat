@@ -6,174 +6,224 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>644</width>
-    <height>801</height>
+    <width>591</width>
+    <height>245</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>300</width>
-    <height>300</height>
+    <width>591</width>
+    <height>245</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>260</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>10</y>
+     <width>531</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Определим среднюю оптимальную ширину стружки для забойных резцов</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>750</y>
+     <x>410</x>
+     <y>210</y>
      <width>83</width>
-     <height>29</height>
+     <height>25</height>
     </rect>
    </property>
    <property name="text">
-    <string>ОК</string>
-   </property>
-  </widget>
-  <widget class="QSplitter" name="splitter_2">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>-10</y>
-     <width>350</width>
-     <height>431</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QSplitter" name="splitter">
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Допустимая максимальная толщина стружки =</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Средняя толщина стружки =</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Средняя оптимальная ширина стружки для забойных резцов =</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser">
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>150</width>
-      <height>150</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>440</y>
-     <width>231</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Диаметр шнека = </string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_6">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>460</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Угол подъема винта шнека = </string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_7">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>480</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Диаметр ступицы шнека =</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_8">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>500</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Толщина винта шнека =</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_9">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>520</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Приведенная площадь потока угля =</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_10">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>540</y>
-     <width>391</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Коэффициент использования сечения шнека =</string>
+    <string>sumtk</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_2">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>600</y>
-     <width>171</width>
-     <height>29</height>
+     <x>500</x>
+     <y>210</y>
+     <width>83</width>
+     <height>25</height>
     </rect>
    </property>
    <property name="text">
-    <string>Расчет кутковой длины</string>
+    <string>Далее</string>
    </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>210</y>
+     <width>83</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Расчитать</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>571</width>
+     <height>139</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Введите конструктивную ширину режущей части забойного резца в сантиметрах</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="decimals">
+       <number>5</number>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Введите показатель степени хрупкости</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="decimals">
+       <number>5</number>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Введите крайний кутковый шаг резания (не более 0,45 tопт)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="decimals">
+       <number>5</number>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Введите первый шаг резания в забойной части (не более 0,85 tопт)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+      <property name="maximumSize">
+       <size>
+        <width>110</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="decimals">
+       <number>5</number>
+      </property>
+      <property name="maximum">
+       <double>1000000000000000000.000000000000000</double>
+      </property>
+      <property name="singleStep">
+       <double>0.100000000000000</double>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>481</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Средняя оптимальная ширина стружки для забойных резцов(toпт) = </string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

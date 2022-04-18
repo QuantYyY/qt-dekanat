@@ -15,16 +15,31 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
 set(PROJECT_SOURCES
-    main.cpp
-    mainwindow.cpp
-    mainwindow.h
-    mainwindow.ui
-    dialog.h
-    dialog.cpp
-    dialog.ui
-    dialog_1.h
-    dialog_1.cpp
-    dialog_1.ui
+        main.cpp
+        mainwindow.cpp
+        mainwindow.h
+        mainwindow.ui
+        dialog.h
+        dialog.cpp
+        dialog.ui
+        dialog_1.h
+        dialog_1.cpp
+        dialog_1.ui
+        dialog_2.h
+        dialog_2.cpp
+        dialog_2.ui
+        corner.h
+        corner.cpp
+        corner.ui
+        dialogcorner.h
+        dialogcorner.cpp
+        dialogcorner.ui
+        errordialog.h
+        errordialog.cpp
+        errordialog.ui
+        dialog_3.h
+        dialog_3.cpp
+        dialog_3.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

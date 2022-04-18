@@ -75,7 +75,7 @@ void Dialog_4::set(std::vector<double>* tk2, int nlk, float maxsumtk, float topt
                     buffer = round((3.6 / s) * ((*tz)[i] - tz1) + (360.0 / nz) * (i - 1));
                     buffer = (int)buffer % 360;
                     gamma.push_back(buffer);
-                    ui->textBrowser->setText("Центральный угол для установки резцов = " + QString::number(gamma[i]) + "  для линии резания " + QString::number(i+1) + "\n");
+                    ui->textBrowser->setText(ui->textBrowser->toPlainText() + "Центральный угол для установки резцов = " + QString::number(gamma[i]) + "  для линии резания " + QString::number(i+1) + "\n");
 
                     //ui->textBrowser->setText(ui->textBrowser->toPlainText() + "sumtk = " + QString::number(sumtk) + "\n");
                     //file << "Центральный угол для установки резцов = " << gamma[i] << " для линии резания " << i + 1 << ";" << "\n";
@@ -91,7 +91,7 @@ void Dialog_4::set(std::vector<double>* tk2, int nlk, float maxsumtk, float topt
                     buffer = round((3.6 * ((*tz)[i] - tz1) * ((1.0 / 0.8) + (scp / s)) / (2.0 * s) + (360.0 * (i - 1)) / nz));
                     buffer = (int)buffer % 360;
                     gamma.push_back(buffer);
-                    ui->textBrowser->setText("Центральный угол для установки резцов = " + QString::number(gamma[i]) + "  для линии резания " + QString::number(i+1) + "\n");
+                    ui->textBrowser->setText(ui->textBrowser->toPlainText() + "Центральный угол для установки резцов = " + QString::number(gamma[i]) + "  для линии резания " + QString::number(i+1) + "\n");
 
                     //std::cout << "Центральный угол для установки резцов = " << gamma[i] << " для линии резания " << i + 1 << std::endl;
                     //file << "Центральный угол для установки резцов = " << gamma[i] << " для линии резания " << i + 1 << ";" << "\n";

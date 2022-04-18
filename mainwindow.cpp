@@ -1,8 +1,35 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include <math.h>
-#include <QErrorMessage>
-#include <QDialog>
+
+void saveDataInFile(QString& str)
+{
+    QFile file("file.csv");
+    if(file.open(QFile::WriteOnly | QFile::Text | QFile::Append))
+    {
+        QTextStream stream(&file);
+        stream << str;
+        file.close();
+    }
+}
+
+double findDouble(QString& findStr)
+{
+    QString str = "";
+    QFile file("file.csv");
+    if(file.open(QFile::ReadOnly | QFile::Text))
+    {
+        QString string = file.readAll();
+        for(int i = string.indexOf(findStr); string[i] != '\n'; i++)
+        {
+            if(string[i] >= '0' && string[i] <= '9')
+                str += string[i];
+            else if(string[i] == ',')
+                str += '.';
+        }
+        file.close();
+    }
+    return str.toDouble();
+}
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,80 +44,32 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_pushButton_clicked()
 {
-    //b = ui->doubleSpinBox->value();
-    hr = ui->doubleSpinBox_2->value();
-    y = ui->doubleSpinBox_3->value();
-    v = ui->doubleSpinBox_4->value();
-    di = ui->doubleSpinBox_5->value();
-    no = ui->doubleSpinBox_6->value();
-    nz = ui->doubleSpinBox_7->value();
-    lkk = ui->doubleSpinBox_9->value();
-    sigma = ui->doubleSpinBox_10->value() * pi / 180;
-    kl = ui->doubleSpinBox_11->value();
-
-    lpp = lkk * sin(sigma);
-    hmax = lpp / kl;
-
-    hcp = 2.0*hmax / pi;
-
-    bk = ui->doubleSpinBox_14->value();
-    e = ui->doubleSpinBox_15->value();
-
-    topt = ((5.0*hcp)/(0.5*hcp+4.5)+0.7*hcp)*((1.47*e)/(e+1.2))+bk;
-
-    tk1 = ui->doubleSpinBox_16->value();
-    tz1 = ui->doubleSpinBox_17->value();
-
-    if(tk1 > 0.45*topt)
+    QFile file("file.csv");
+    if(file.open(QFile::WriteOnly | QFile::Text))
     {
-        ui->label_1->setText("Введён не корректный крайний кутковый шаг резания");
-        return;
-    }else{
-        ui->label_1->setText("");
+        file.resize(0);
+        file.close();
     }
 
-    if(tz1 > 0.85*topt)
+    QString strSave = "Ширина захвата; " + ui->doubleSpinBox->text() + '\n';
+    strSave += "Мощность пласта; " + ui->doubleSpinBox_2->text() + '\n';
+    strSave += "Плотность угля; " + ui->doubleSpinBox_3->text() + '\n';
+    strSave += "Скорость подачи; " + ui->doubleSpinBox_4->text() + '\n';
+    strSave += "Диаметр исполнительного органа; " + ui->doubleSpinBox_5->text() + '\n';
+    strSave += "Частота вращения; " + ui->doubleSpinBox_6->text() + '\n';
+    strSave += "Число заходов шнека; " + ui->doubleSpinBox_7->text() + '\n';
+
+    if(strSave.indexOf(" 0,00000\n") > 0)
     {
-        ui->label_1->setText("Введён не корректный первый шаг резания в забойной части");
+        QMessageBox::warning(this, "Error", "Некорректные данные");
         return;
-    }else{
-        ui->label_1->setText("");
     }
 
-    d1.set(&tk2, nlk, maxsumtk, topt, sumtk, tz1, tk1, maxnlk);
-    d1.set(hmax, hcp, topt);
-    d1.show();
-}
+    saveDataInFile(strSave);
 
-
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    b = ui->doubleSpinBox->value();
-    hr = ui->doubleSpinBox_2->value();
-    y = ui->doubleSpinBox_3->value();
-    v = ui->doubleSpinBox_4->value();
-    di = ui->doubleSpinBox_5->value();
-    no = ui->doubleSpinBox_6->value();
-    nz = ui->doubleSpinBox_7->value();
-    lkk = ui->doubleSpinBox_9->value();
-    sigma = ui->doubleSpinBox_10->value() * pi / 180;
-    kl = ui->doubleSpinBox_11->value();
-
-    lpp = lkk * sin(sigma);
-    hmax = lpp / kl;
-
-    hcp = 2.0*hmax / pi;
-
-    bk = ui->doubleSpinBox_14->value();
-    e = ui->doubleSpinBox_15->value();
-
-    topt = ((5.0*hcp)/(0.5*hcp+4.5)+0.7*hcp)*((1.47*e)/(e+1.2))+bk;
-
-    ui->label_12->setText("0,45 tопт = " + QString::number(0.45*topt));
-    ui->label_18->setText("0,85 tопт = " + QString::number(0.85*topt));
+    window.show();
+    this->close();
 }
 
